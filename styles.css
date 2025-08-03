@@ -4,7 +4,7 @@ body {
     font: 14px 'JetBrains Mono', monospace;
     color: #fff;
     text-align: center;
-    background: #222222;
+    background: #111111;
     flex-direction: column;
     
 }
@@ -17,7 +17,7 @@ main,
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
-    border: 4px double rgb(180, 180, 180);
+    /* border: 4px double rgb(180, 180, 180); */
 }
 
 a {
@@ -35,9 +35,9 @@ a {
     justify-content: center;
     align-items: center;
     gap: 15px;
-    background-color: rgba(34, 34, 34, 0.7);
+    background-color: rgba(17, 17, 17, 0.7);
     backdrop-filter: blur(10px);
-    border: 4px double rgb(180, 180, 180);
+    /* border: 4px double rgb(180, 180, 180); */
 }
 
 body,
@@ -48,6 +48,15 @@ body,
 a,
 #webring {
     color: rgb(66, 131, 252);
+}
+
+#jccenter {
+    display: flex;
+    justify-content: center;
+}
+
+#myfriends {
+    margin-left: 50px;
 }
 
 /* <-----------------------> */
@@ -69,6 +78,14 @@ a,
     h2, h3 {
         font-size: 1.1rem;
         margin: 12px 0;
+    }
+
+    #jccenter {
+        display: block;
+    }
+
+    #myfriends {
+        margin-left: 0px;
     }
 
     #webring {
