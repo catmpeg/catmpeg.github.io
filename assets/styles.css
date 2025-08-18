@@ -1,90 +1,50 @@
 body {
-    margin: 0;
-    min-height: 100svh;
-    font: 14px 'JetBrains Mono', monospace;
-    color: #fff;
-    text-align: center;
-    background: #111111;
-    flex-direction: column;
-    
+    margin:0;
+    min-height:100svh;
+    font:14px 'JetBrains Mono',monospace;
+    color:#fff;
+    text-align:center;
+    background:#111;
+    display:flex;
+    flex-direction:column;
 }
 
-main,
-.webring {
-    max-width: 1000px;
-    width: calc(100% - 20px); 
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
+main,.webring {
+    max-width:1000px;
+    width:calc(100% - 20px);
+    margin:0 auto;
+    padding:20px;
+    box-sizing:border-box;
 }
 
-a {
-    text-decoration: none;
-}
+a,.webring { color:rgb(66,131,252); }
+a { text-decoration:none; }
 
 .webring {
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    background-color: rgba(17, 17, 17, 0.7);
-    backdrop-filter: blur(10px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    background:rgba(17,17,17,.7);
+    backdrop-filter:blur(10px);
 }
 
-body,
-.webring {
-    display: flex;
+.jccenter { display:flex; justify-content:center; }
+.myfriends { margin-left:50px; }
+
+@media(max-width:600px){
+    body { gap:15px; padding:0 10px; }
+    main { padding:15px; }
+    h1 { font-size:1.5rem; }
+    h2,h3 { font-size:1.1rem; margin:12px 0; }
+    .jccenter { display:block; }
+    .myfriends { margin-left:0; }
+    .webring { margin:10px auto 0; padding:8px 12px; }
 }
 
-a,
-.webring {
-    color: rgb(66, 131, 252);
-}
-
-.jccenter {
-    display: flex;
-    justify-content: center;
-}
-
-.myfriends {
-    margin-left: 50px;
-}
-
-@media (max-width: 600px) {
-    body {
-        gap: 15px;
-        padding: 0 10px;
-    }
-    
-    main {
-        padding: 15px;
-    }
-    
-    h1 {
-        font-size: 1.5rem;
-    }
-    
-    h2, h3 {
-        font-size: 1.1rem;
-        margin: 12px 0;
-    }
-
-    .jccenter {
-        display: block;
-    }
-
-    .myfriends {
-        margin-left: 0px;
-    }
-
-    .webring {
-        margin: 10px auto 0;
-        padding: 8px 12px;
-    }
-}
-
-@font-face {
-    font-family: 'JetBrains Mono';
-    src: url('JetBrainsMono-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-display: swap;
+@font-face{
+    font-family:'JetBrains Mono';
+    src:url('JetBrainsMono-Bold.ttf') format('truetype');
+    font-weight:bold;
+    font-display:swap;
 }
