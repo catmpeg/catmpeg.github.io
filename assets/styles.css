@@ -1,12 +1,26 @@
 body {
     margin: 0;
     min-height: 100svh;
-    font: 14px 'SegoeUI',monospace;
+    font: 14px 'JetBrainsMono',monospace;
     color: #fff;
     text-align: center;
-    background: #111;
+    background: url("wallhaven-3kkgl6.jpg") center/cover fixed;
+    /* background-color: rgb(27,27,27); */
     display: flex;
     flex-direction: column;
+}
+
+body:before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(37,37,37,0.5);
+    pointer-events: none;
+}
+
+body * {
+    position: relative;
+    z-index: 1;
 }
 
 main {
@@ -18,17 +32,23 @@ main {
 }
 
 a {
-    color: rgb(66,131,252);
+    color: rgb(0, 162, 255);
     text-decoration: none;
 }
 
-.jccenter {
+a:hover {
+    text-decoration: underline;
+}
+
+.info {
     display: flex;
+    gap: 50px;
     justify-content: center;
 }
 
-.myfriends {
-    margin-left: 50px;
+.h1-404 {
+    font-size: 6em;
+    margin: 0 auto;
 }
 
 @media(max-width:600px){
@@ -36,13 +56,12 @@ a {
     main { padding:15px; }
     h1 { font-size:1.5rem; }
     h2,h3 { font-size:1.1rem; margin:12px 0; }
-    .jccenter { display:block; }
-    .myfriends { margin-left:0; }
+    .info { display:block; }
 }
 
 @font-face{
-    font-family: 'SegoeUI';
-    src: url('Segoe UI.ttf') format('truetype');
-    font-weight: normal;
+    font-family: 'JetBrainsMono';
+    src: url('JetBrainsMono.ttf') format('truetype');
+    font-weight: bold;
     font-display: swap;
 }
