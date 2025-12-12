@@ -26,9 +26,28 @@
             <textarea class="mybutton" readonly>&lt;a href="//catmpeg.tolya1337.ru"&gt;&lt;img src="//catmpeg.tolya1337.ru/catmpeg88.png"&gt;&lt;/a&gt;</textarea>
             <br><br>
             <a href="//cat.tolya1337.ru"><img src="catmpeg88.png"></a>
-            <h2>Latest played song:</h2>
-            <h3 id="song"></h3>
-            <script>let u='catmpeg',s=document.querySelector('#song');fetch('https://lastfm-last-played.biancarosa.com.br/'+u+'/latest-song').then(r=>r.json()).then(j=>s.innerHTML=`<a href="https://www.last.fm/music/${encodeURIComponent(j.track.artist['#text']).replace(/%20/g,'+')}/_/${encodeURIComponent(j.track.name).replace(/%20/g,'+')}" target="_blank">${j.track.name} - ${j.track.artist['#text']}</a>`);</script>
+            <div id="last-played" style="display: none">
+                <h2>Latest played song:</h2>
+                <h3 id="song"></h3>
+            </div>
+            <!-- <script>let u='catmpeg',s=document.querySelector('#song');fetch('https://lastfm-last-played.biancarosa.com.br/'+u+'/latest-song').then(r=>r.json()).then(j=>s.innerHTML=`<a href="https://www.last.fm/music/${encodeURIComponent(j.track.artist['#text']).replace(/%20/g,'+')}/_/${encodeURIComponent(j.track.name).replace(/%20/g,'+')}" target="_blank">${j.track.name} - ${j.track.artist['#text']}</a>`);</script> -->
+            <script>
+                // коля блять хватит эту залупу юзать, я тебя за чатку выебу нахуй, я щас вены себе вскрою за такой код
+                const lastPlayedBlock = document.getElementById('last-played');
+
+                let xmlHttp = new XMLHttpRequest();
+                xmlHttp.open("GET", "https://www.ballix.net/whatsplaying/?user=catmpeg", false);
+                xmlHttp.send(null);
+
+                if (xmlHttp.responseText != 0) {
+                    const lastParse = JSON.parse(xmlHttp.responseText);
+                
+                    const lastPlayed = document.querySelector("#song");
+                    lastPlayed.innerHTML = "<a target=\"blank_\" href=\"" + lastParse["url"] + "\">" + lastParse["name"] + " - " + lastParse["artist"] + "</a>";
+
+                    lastPlayedBlock.style.display = "block";
+                }
+            </script>
     </main>
     <div class="down">
     <h3><a href="//retro.cat.tolya1337.ru">&gt; retro page &lt;</a></h3>
