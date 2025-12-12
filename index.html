@@ -17,6 +17,7 @@
                 <h3>Github: <a href="//github.com/catmpeg">catmpeg</a></h3>
                 <h3>Steam: <a href="//steamcommunity.com/id/catmpeg">catmpeg</a></h3>
                 <h3>YouTube: <a href="//www.youtube.com/@catmpeg">catmpeg</a></h3>
+                <h3>Last.fm: <a href="//www.last.fm/user/catmpeg">catmpeg</a></h3>
                 <h2>My friends:</h2>
                 <h3>Cat.: <a href="//cat8753.ru">cat8753.ru</a></h3>
                 <h3>Tolya Gosuslugi: <a href="//tolya1337.ru">tolya1337.ru</a></h3>
@@ -24,12 +25,19 @@
             <h2>My button:</h2>
             <textarea class="mybutton" readonly>&lt;a href="//catmpeg.tolya1337.ru"&gt;&lt;img src="//catmpeg.tolya1337.ru/catmpeg88.png"&gt;&lt;/a&gt;</textarea>
             <br><br>
-            <a href="//cat.tolya1337.ru"><img src="catmpeg88.png">
+            <a href="//cat.tolya1337.ru"><img src="catmpeg88.png"></a>
+            <h2>Latest played song:</h2>
+            <h3 id="song"></h3>
+            <script>let u='catmpeg',s=document.querySelector('#song');fetch('https://lastfm-last-played.biancarosa.com.br/'+u+'/latest-song').then(r=>r.json()).then(j=>s.innerHTML=`<a href="https://www.last.fm/music/${encodeURIComponent(j.track.artist['#text']).replace(/%20/g,'+')}/_/${encodeURIComponent(j.track.name).replace(/%20/g,'+')}" target="_blank">${j.track.name} - ${j.track.artist['#text']}</a>`);</script>
+            </main>
+
+
+            <div class="down">
             <h3><a href="//retro.cat.tolya1337.ru">&gt; retro page &lt;</a></h3>
     <h3>
-        <a href="//otomir23.me/webring/34/prev">&lt;prev</a>
+        <a href="//otomir23.me/webring/catmpeg/prev">&lt;prev</a>
         <a href="//otomir23.me/webring" target="_blank">webring</a>
-        <a href="//otomir23.me/webring/34/next">next&gt;</a>
+        <a href="//otomir23.me/webring/catmpeg/next">next&gt;</a>
     </h3><br>
     <a href="//tolya1337.ru"><img src="//tolya1337.ru/img/88x31.png"></a>
     <a href="https://otomir23.me/" target="_blank" style="image-rendering:pixelated"><img src="https://otomir23.me/88x31.png" alt="otomir23's 88x31 button"></a>
@@ -39,6 +47,6 @@
     <a href="//firefox.com"><img src="assets/images/firefox2.gif" height="31" width="88"></a>
     <a href="//github.com"><img src="assets/images/github.gif" height="31" width="88"></a>
     <a href="//reddit.com"><img src="assets/images/reddit.gif" height="31" width="88"></a>
-</main>
+    </div>
 </body>
 </html>
